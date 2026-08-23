@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Medical imaging data
+*.nii
+*.nii.gz
+*.dcm
+*.nrrd
+*.mha
+*.mhd
+
+# Datasets
+data/
+datasets/
+
+# ML model weights
+*.pth
+*.pt
+*.onnx
+*.ckpt
+*.pkl
+
+# Temporary/generated output
+outputs/
+results/
+temp/
+tmp/
+
+# Archives
+*.zip
+
+# Documentation/source material not required by application
+*.pdf
+*.docx
+
+# Screenshots/images
+Screenshot*.png
+Code_Generated_Image.png
+module1_mri_workflow.png

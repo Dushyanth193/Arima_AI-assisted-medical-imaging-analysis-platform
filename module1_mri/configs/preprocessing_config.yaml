@@ -1,0 +1,6 @@
+target_spacing: [0.5, 0.5, 0.5]   # mm, isotropic resample target
+denoise: true
+denoise_iterations: 5
+denoise_conductance: 3.0
+bias_correct: false                # turn on if you see intensity inhomogeneity
+segmentation_intensity_percentile: 90   # placeholder segmenter only

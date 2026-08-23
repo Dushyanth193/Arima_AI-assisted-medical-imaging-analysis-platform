@@ -1,0 +1,45 @@
+project:
+  name: "Knee Implant Sizing & Anatomical Analysis"
+  version: "0.1.0"
+  description: "AI-assisted femoral/tibial CT measurement and implant size matching"
+  disclaimer: "Research / prototype result — not for clinical decision-making. Final implant selection remains with a qualified orthopedic surgeon."
+
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  data_splits: "data/splits"
+  data_demo: "data/demo"
+  checkpoints: "checkpoints"
+  outputs: "outputs"
+  database: "knee_implant.db"
+
+preprocessing:
+  target_spacing: [1.0, 1.0, 1.0] # mm isotropic
+  hu_clip_min: -200
+  hu_clip_max: 2000
+  patch_size: [96, 160, 160]
+  orientation: "LPS"
+
+segmentation:
+  num_classes: 3
+  labels:
+    background: 0
+    femur: 1
+    tibia: 2
+  in_channels: 1
+  deep_supervision: true
+
+training:
+  batch_size: 2
+  grad_accum_steps: 4
+  epochs: 300
+  learning_rate: 0.01
+  weight_decay: 0.00003
+  val_interval: 5
+  early_stopping_patience: 40
+  seed: 42
+
+matching:
+  ml_weight: 1.0
+  ap_weight: 1.0
+  default_tolerance_mm: 1.5

@@ -1,0 +1,35 @@
+# --- Core scientific / array stack ---
+numpy>=1.26
+scipy>=1.11
+pandas>=2.1
+scikit-image>=0.22
+
+# --- Medical image I/O & processing ---
+SimpleITK>=2.3
+
+# --- Deep learning ---
+torch>=2.2
+monai>=1.3          # provides DynUNet (MONAI's nnU-Net-style architecture), transforms, losses, metrics
+# nnunetv2>=2.4      # optional: uncomment to swap in the standalone nnU-Net framework/CLI instead of MONAI's DynUNet
+
+# --- 3D reconstruction / visualization ---
+pyvista>=0.43
+vtk>=9.3
+plotly>=5.19
+stpyvista>=0.2      # embeds PyVista 3D scenes inside Streamlit
+
+# --- Backend / API ---
+fastapi>=0.110
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9   # required by FastAPI for UploadFile
+
+# --- Database ---
+SQLAlchemy>=2.0
+psycopg2-binary>=2.9
+
+# --- UI ---
+streamlit>=1.32
+
+# --- Dev / testing ---
+pytest>=8.0
+requests>=2.31
